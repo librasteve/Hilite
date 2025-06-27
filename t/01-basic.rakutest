@@ -1,0 +1,6 @@
+use Test;
+use Hilite;
+
+pass "replace me";
+
+done-testing;
