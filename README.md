@@ -1,6 +1,6 @@
 # Hilite
 
-Hilite is a code highlighter.
+Hilite is an HTML code highlighter.
 
 Hilite is provided as a plugin supporting both the Air::Plugin:: web authoring and Rakudoc::Plugin::HTML:: (v2) documentation models.
 
