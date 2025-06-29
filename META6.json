@@ -8,7 +8,7 @@
   "depends": [
     "Rainbow"
   ],
-  "description": "blah blah blah",
+  "description": "HTML code highlighter for raku, rakudoc and other languages"",
   "license": "Artistic-2.0",
   "name": "Hilite",
   "provides": {
