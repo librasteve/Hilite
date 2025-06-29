@@ -6,20 +6,20 @@
   "build-depends": [
   ],
   "depends": [
+    "Rainbow"
   ],
   "description": "blah blah blah",
   "license": "Artistic-2.0",
   "name": "Hilite",
-  "perl": "6.d",
   "provides": {
     "Hilite": "lib/Hilite.rakumod"
   },
   "resources": [
   ],
-  "source-url": "",
+  "source-url": "https://github.com/librasteve/Hilite.git",
   "tags": [
   ],
   "test-depends": [
   ],
-  "version": "0.0.1"
+  "version": "0.2.0"
 }

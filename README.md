@@ -1,20 +1,44 @@
-NAME
-====
+# Hilite
 
-Hilite
+Hilite is a code highlighter.
 
-SYNOPSIS
-========
+Hilite is provided as a plugin supporting both the Air::Plugin:: web authoring and Rakudoc::Plugin::HTML:: (v2) documentation models.
 
-Hilite is provided as a plugin according to the Rakudoc v2 plugin model.
+Hilite employs the Rainbow raku highlighter (auth<patrickbr>) for raku and rakudoc and highlighter.js for other languages.
 
-Hilite employs the Rainbow raku highlighter (patrickb) for raku and rakudoc and highlighter.js for other languages.
+## SYNOPSIS
 
-This rather long winded "synopsis" is from Air::Plugin::Hilite.
 
-This code stubs a Template and a Receptacle (a fancy word for Socket) into which Hilite plugs.
+If you just want to get a web page that highlights raku, the easiest way to consume the Hilite module is with Air::Plugin::Hilite:
+```raku
+use Air::Functional :BASE;
+use Air::Base;
+use Air::Plugin::Hilite;
 
-The Template / Receptacle model is being incrementally adopted by the raku Air module as a wider usage of the Rakudoc::Plugin::HTML:: approach and the medium term aim is to make it possible for any raku web library to reuse Air::Plugin:: / Rakudoc::Plugin::HTML:: modules interchageably. And for Air::Plugin:: modules to work with Rakudoc v2.
+sub SITE is export {
+    site :register[Air::Plugin::Hilite.new],
+        page
+            main
+                hilite q:to/END/;
+                    use Air::Functional :BASE;
+                    use Air::Base;
+                    use Air::Plugin::Hilite;
+
+                    sub SITE is export {
+                        site :register[Hilite.new],
+                            index
+                                main
+                                    hilite 'say "yo, baby!"';
+                    }
+                END
+}
+```
+
+## DESCRIPTION
+
+If you want to consume Hilite in your own code, the following code stubs a Template and a Receptacle (a fancy word for Socket) into which Hilite plugs.
+
+The Template / Receptacle model originated as a Rakudoc Process and is now being adopted by the raku Air module as a wider usage of the Rakudoc::Plugin::HTML:: approach. The medium term aim is to make it possible for any raku web library to reuse Air::Plugin:: / Rakudoc::Plugin::HTML:: modules interchageably. And for Air::Plugin:: modules to work with Rakudoc v2.
 
 ```raku
 role Air::Plugin::Hilite does Tag {
@@ -94,9 +118,6 @@ role Air::Plugin::Hilite does Tag {
     method SCSS      { $!scss }
 }
 ```
-
-DESCRIPTION
-===========
 
 Hilite is a direct descendant from, and built as a drop-in replacement for, [Rakudoc::Plugin::HTML::Hilite](https://github.com/finanalyst/rakuast-rakudoc-render/blob/177abccc3215518bb16d689edbdd4854f8eb3d9a/lib/RakuDoc/Plugin/HTML/Hilite.rakumod)
 
