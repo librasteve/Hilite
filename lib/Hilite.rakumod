@@ -379,11 +379,20 @@ method scss-str-pico {
         --base-color-doc-markup: #d02b4c;   /* Matches adjusted danger */
     }
 
+    @media only screen and (max-width: 480px) {
+        .raku-code {
+            padding: 10px;
+        }
+    }
+
     .raku-code {
-        z-index: 1; /* or even 0 */
+        z-index: 1;
         text-align:left;
         position: relative;
         min-width: 400px;
+        max-width: 100%;
+        overflow-x: auto;
+
         button.copy-code {
             float: right;
             cursor: pointer;
@@ -395,6 +404,7 @@ method scss-str-pico {
         &:hover button.copy-code {
             opacity: 1;
         }
+
         label {
             float: right;
             font-size: xx-small;
