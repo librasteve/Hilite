@@ -196,7 +196,11 @@ method js-text {
             // if behaviour problems with different browsers add stylesheet code from that solution.
             const copyButtons = Array.from(document.querySelectorAll('.copy-code'));
             copyButtons.forEach( function( button ) {
-            var codeElement = button.nextElementSibling.nextElementSibling; // skip the label and get the div
+            // this works with / without label
+            var codeElement = button.nextElementSibling;
+            while (codeElement && codeElement.tagName !== 'DIV') {
+              codeElement = codeElement.nextElementSibling;
+            }
             button.addEventListener( 'click', function(insideButton) {
                 var container = document.createElement('div');
                 container.innerHTML = codeElement.innerHTML;
