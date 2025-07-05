@@ -2,6 +2,9 @@ Revision history for Hilite
 
 {{$NEXT}}
 
+0.2.3  2025-07-05T21:12:55+01:00
+    - js works with/without label
+
 0.2.2  2025-07-05T12:25:38+01:00
     - label option (default on)
 
