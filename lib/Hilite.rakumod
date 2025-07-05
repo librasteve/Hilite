@@ -82,6 +82,7 @@ method templates {
             # if :lang is set to a lang in list, then enable highlightjs
             # if :lang is set to lang not in list, not raku or RakuDoc, then no highlighting
             # if :lang is not set, then highlight as Raku
+            # if :!label, then no text label eg. "raku highlighting"
 
             my $code;
             my $syntax-label;
@@ -91,6 +92,9 @@ method templates {
             $!css-lib = $_ with %prm<css-lib>;
 
             my Bool $hilite = %prm<syntax-highlighting> // True;
+#            my Bool $label  = %prm<label> // True;
+            my Bool $label  = %prm<label> // False;
+
             if %prm<allow> {
                 $syntax-label = '<b>allow</b> styling';
                 $code = qq:to/NOHIGHS/;
@@ -169,10 +173,12 @@ method templates {
                         NOHIGHS
             }
 
+            my $label-tag = $label ?? '<label>' ~ $syntax-label ~ '</label>' !! '';
+
             qq[
                 <div class="raku-code">
                     <button class="copy-code" title="copy code">⿻</button>
-                    <label>$syntax-label\</label>
+                    $label-tag
                     <div>$code\</div>
                 </div>
             ]
@@ -348,7 +354,6 @@ method scss-str-bulma {
     }
     SCSS
 }
-
 method scss-str-pico {
     q:to/SCSS/
     /* Raku code highlighting */
