@@ -92,8 +92,7 @@ method templates {
             $!css-lib = $_ with %prm<css-lib>;
 
             my Bool $hilite = %prm<syntax-highlighting> // True;
-#            my Bool $label  = %prm<label> // True;
-            my Bool $label  = %prm<label> // False;
+            my Bool $label  = %prm<label> // True;
 
             if %prm<allow> {
                 $syntax-label = '<b>allow</b> styling';
