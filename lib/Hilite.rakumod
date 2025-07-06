@@ -393,7 +393,6 @@ method scss-str-pico {
         z-index: 1;
         text-align:left;
         position: relative;
-        min-width: 400px;
         max-width: 100%;
         overflow-x: auto;
 
