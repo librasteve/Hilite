@@ -421,7 +421,7 @@ method scss-str-pico {
         }
         pre {
             display: inline-block;
-            overflow: scroll;
+            overflow: auto;
             width: 100%;
             margin-bottom: 0px;
         }
