@@ -383,12 +383,6 @@ method scss-str-pico {
         --base-color-doc-markup: #d02b4c;   /* Matches adjusted danger */
     }
 
-    @media only screen and (max-width: 480px) {
-        .raku-code {
-            padding: 10px;
-        }
-    }
-
     .raku-code {
         z-index: 1;
         text-align:left;
@@ -402,6 +396,7 @@ method scss-str-pico {
             opacity: 0;
             padding: 0 0.25rem 0.25rem 0.25rem;
             margin-left: 0.25rem;
+            margin-bottom: -15px;
             position: relative;
         }
         &:hover button.copy-code {
@@ -428,6 +423,7 @@ method scss-str-pico {
             display: inline-block;
             overflow: scroll;
             width: 100%;
+            margin-bottom: 0px;
         }
         .rakudoc-in-code {
             padding: 1.25rem 1.5rem;
