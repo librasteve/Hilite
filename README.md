@@ -4,7 +4,7 @@ Hilite is an HTML code highlighter.
 
 Hilite is provided as a plugin supporting both the Air::Plugin:: web authoring and Rakudoc::Plugin::HTML:: (v2) documentation models.
 
-Hilite employs the Rainbow raku highlighter (auth<patrickbr>) for raku and rakudoc and highlighter.js for other languages.
+Hilite employs the Rainbow raku highlighter (auth:patrickbr) for raku and rakudoc and highlighter.js for other languages.
 
 ## SYNOPSIS
 
