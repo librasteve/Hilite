@@ -2,6 +2,9 @@ Revision history for Hilite
 
 {{$NEXT}}
 
+0.2.6  2025-09-24T15:34:03+01:00
+    - pin-deps
+
 0.2.5  2025-07-07T10:13:39+01:00
     - overflow:scroll
 
