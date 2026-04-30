@@ -1,25 +1,18 @@
 {
-  "auth": "zef:librasteve",
-  "authors": [
-    "librasteve"
-  ],
-  "build-depends": [
-  ],
-  "depends": [
-    "Rainbow:ver<0.3.0>:auth<zef:patrickb>"
-  ],
-  "description": "HTML code highlighter for raku, rakudoc and other languages",
-  "license": "Artistic-2.0",
-  "name": "Hilite",
-  "provides": {
-    "Hilite": "lib/Hilite.rakumod"
-  },
-  "resources": [
-  ],
-  "source-url": "https://github.com/librasteve/Hilite.git",
-  "tags": [
-  ],
-  "test-depends": [
-  ],
-  "version": "0.2.6"
+    "name": "Hilite",
+    "description": "HTML code highlighter for raku, rakudoc and other languages",
+    "version": "0.2.6",
+    "authors": [
+        "librasteve"
+    ],
+    "auth": "zef:librasteve",
+    "depends": [
+        "Rainbow:ver<0.3.0>:auth<zef:patrickb>"
+    ],
+    "build-depends": [],
+    "provides": {
+        "Hilite": "lib/Hilite.rakumod"
+    },
+    "license": "Artistic-2.0",
+    "source-url": "https://github.com/librasteve/Hilite.git"
 }

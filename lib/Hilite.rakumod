@@ -359,6 +359,14 @@ method scss-str-bulma {
 }
 method scss-str-pico {
     q:to/SCSS/
+    /* Non Raku code highlighting */
+    pre, code, kbd {
+        background: none;
+    }
+    .hljs {
+        background: none !important;
+    }
+
     /* Raku code highlighting */
 
     //hardwire hilite colours (for now)
