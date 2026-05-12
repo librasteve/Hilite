@@ -2,6 +2,9 @@ Revision history for Hilite
 
 {{$NEXT}}
 
+0.2.8  2026-05-12T19:29:38+01:00
+    - align non-raku & raku code (rm extra \n)
+
 0.2.7  2026-04-30T13:59:37+01:00
     - background: none; for non-Raku code
 

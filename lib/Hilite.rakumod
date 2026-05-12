@@ -86,7 +86,7 @@ method templates {
 
             my $code;
             my $syntax-label;
-            my $source = %prm<contents>.Str.trim-trailing;
+            my $source = %prm<contents>.Str.trim;
 
             # promote css-lib to outer scope
             $!css-lib = $_ with %prm<css-lib>;
@@ -108,10 +108,7 @@ method templates {
                     when any( %!hilight-langs.keys ) {
                         $syntax-label = $lang ~  ' highlighting by highlight-js';
                         $code = qq:to/HILIGHT/;
-                            <pre class="browser-hl">
-                            <code class="language-{ %!hilight-langs{ $_ } }">
-                            { $tmpl.globals.escape.($source) }
-                            </code></pre>
+                            <pre class="browser-hl"><code class="language-{ %!hilight-langs{ $_ } }">{ $tmpl.globals.escape.($source) }</code></pre>
                             HILIGHT
                     }
                     when 'RAKUDOC' {
@@ -365,6 +362,7 @@ method scss-str-pico {
     }
     .hljs {
         background: none !important;
+        padding: 0 !important;
     }
 
     /* Raku code highlighting */
@@ -420,7 +418,7 @@ method scss-str-pico {
             margin-top: 1rem;
         }
         /* required to match highlights-js css with raku highlighter css */
-        pre.browser-hl { padding: 7px; }
+        /* pre.browser-hl { padding: 7px; } */
 
         .code-name {
             padding-top: 0.75rem;
